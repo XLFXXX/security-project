@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# UTM 虚拟机（本地运行，不进版本库）
+*.utm/
+*.qcow2
+*.fd
+config.plist
+
+# 虚拟机镜像/大文件
+*.iso
+*.img
+*.vmdk

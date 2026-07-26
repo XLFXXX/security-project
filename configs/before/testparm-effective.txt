@@ -1,0 +1,52 @@
+# Global parameters
+[global]
+	log file = /var/log/samba/log.%m
+	logging = file
+	map to guest = Bad User
+	max log size = 1000
+	obey pam restrictions = Yes
+	pam password change = Yes
+	panic action = /usr/share/samba/panic-action %d
+	passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+	passwd program = /usr/bin/passwd %u
+	server min protocol = NT1
+	server role = standalone server
+	unix password sync = Yes
+	usershare allow guests = Yes
+	idmap config * : backend = tdb
+
+
+[homes]
+	browseable = No
+	comment = Home Directories
+	create mask = 0700
+	directory mask = 0700
+	valid users = %S
+
+
+[printers]
+	browseable = No
+	comment = All Printers
+	create mask = 0700
+	path = /var/tmp
+	printable = Yes
+
+
+[print$]
+	comment = Printer Drivers
+	path = /var/lib/samba/printers
+
+
+[public]
+	create mask = 0777
+	directory mask = 0777
+	guest ok = Yes
+	path = /proj/nas/public
+	read only = No
+
+
+[private]
+	create mask = 0777
+	guest ok = Yes
+	path = /proj/nas/private
+	read only = No

@@ -30,6 +30,7 @@ kali nmap 扫描服务版本
 1. rockyou有1434万条，太长，而且我对kali虚拟机的限制是单线程。对于password123这种弱密码，该换小字典fasttrack.txt
 2. 改换fasttrack.txt之后，这次秒出结果，还是0 valid password found。原因是hydra的smb模块与samba协议不兼容，改用medusa成功爆破命中password123
 ![medusa -h 192.168.128.3 -u share1 -P /usr/share/wordlists/fasttrack.txt -M smbnt](image-19.png)
+medusa 试到第 82 个词 `password123` 命中，结尾 `[SUCCESS (ADMIN$ - Share Unavailable)]` —— before 弱口令确实可被爆破。
 
 ## 隐患 D — 过宽共享权限（匿名写入）
 

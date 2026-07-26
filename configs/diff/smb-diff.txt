@@ -1,0 +1,35 @@
+241,244c241,243
+<    # Vulnerability: Allow legacy and insecure SMBv1 (NT1) protocol
+<    server min protocol = NT1
+<    # Vulnerability: Enable guest access 
+<    map to guest = Bad User 
+---
+>    server min protocol = SMB3
+>    map to guest = Never
+>    restrict anonymous = 2
+246d244
+< # Vulnerability: Public share allows anonymous guest access without authentication
+250,254c248,251
+<    guest ok = yes
+<    read only = no
+<    # Vulnerability: files and directories are created with overly permissions
+<    create mask = 0777
+<    directory mask = 0777
+---
+>    read only = yes
+>    valid users = share1
+>    create mask = 0640
+>    directory mask = 0750
+256d252
+< # Vulnerability: private share is allowed to read/write for everyone
+259,262c255,259
+<    browseable = yes
+<    guest ok = yes
+<    read only = no
+<    create mask = 0777
+---
+>    browseable = no
+>    read only = yes
+>    valid users = share1
+>    create mask = 0640
+>    directory mask = 0750

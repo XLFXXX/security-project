@@ -40,6 +40,7 @@ medusa 试到第 82 个词 `password123` 命中，结尾 `[SUCCESS (ADMIN$ - Sha
 ## 隐患 E — SMBv1(NT1) 老旧协议探测
 NT LM 0.12 (SMBv1)出现在服务端支持的 dialects 列表里,甚至被[dangerous, but default]
 这证明 NAS 服务端仍接受已被弃用的 SMBv1 协议
+![alt text](image-39.png)
 
 ## 隐患 F — NFS 无限制挂载（no_root_squash 越权）
 ![alt text](image-22.png)
